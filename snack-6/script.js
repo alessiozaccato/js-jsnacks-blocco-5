@@ -12,3 +12,38 @@ const zucchine = [
 ];
 
 // A partire dall'array fornito, crea due array. Uno con le zucchine più lunghe di almeno 15cm. L'altro con le restanti.
+
+//link the ul thwt i need from html
+let longList = document.getElementById("long_list");
+let otherList = document.getElementById("other_list");
+
+//first array of zucchine lenght > 15
+const longZucchine = zucchine.filter((element) => {
+  return (element.length > 15) ? (element) : (null);
+})
+
+console.log(longZucchine);//print on console
+longZucchine.forEach((element) => {
+
+  let { type, weight, length } = element; //with destructuring 
+  longList.innerHTML += `<li>${type} ,${weight},${length}  </li>`//print on web Page
+
+})
+
+
+
+//second array of zucchine lenght < 15
+const othersZucchine = zucchine.filter((element) => {
+  return (element.length < 15) ? (element) : (null);
+})
+
+console.log(othersZucchine)
+
+othersZucchine.forEach((element) => {
+
+  let { type, weight, length } = element; //with destructuring 
+  otherList.innerHTML += `<li>${type} ,${weight},${length}  </li>`//print on web Page
+
+})
+
+
