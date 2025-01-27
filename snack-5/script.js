@@ -8,3 +8,6 @@ const numsEven = nums.filter((element) => {
 })
 
 console.log(numsEven);
+
+//shorter form 
+// const numsEven = nums.filter((element) => (element % 2 === 0));
